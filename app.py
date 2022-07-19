@@ -41,7 +41,7 @@ with dataset:
     df = pd.read_csv('EIA_volumes.csv', parse_dates=['Date'])
     
     
-    sel_series = st.selectbox('Choose a graph to plot:', options=['Ethane', 'Propane', 'Gasoline', 'Jet Fuel'])
+    sel_series = st.selectbox('Choose a graph to plot:', options=['Ethane', 'Propane', 'Gasoline', 'Jet Fuel', 'Crude Oil'])
     
     fig_df = df.filter(items=['Date', sel_series])
     figp = px.line(fig_df, x='Date', y=sel_series, title=sel_series + ' demand')
