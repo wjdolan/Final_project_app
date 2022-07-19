@@ -53,5 +53,6 @@ with modelTrainer:
     if st.button('Start Forecast'):
         st.write('Forecasting...')
         make_forecast(sel_series, df)
+        
     else:
         st.write('Click button to forecast')
