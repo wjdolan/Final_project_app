@@ -16,7 +16,7 @@ def make_forecast(series, df):
         Input: selected from dropdown list (series)
     """
     
-    prophet_df = (df.filter(items=['Month', series]).rename(columns={'Date': 'ds', series: 'y'}))
+    prophet_df = (df.filter(items=['Date', series]).rename(columns={'Date': 'ds', series: 'y'}))
 
     title = series + ' demand (thousand bbls_d)'
     
