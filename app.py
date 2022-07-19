@@ -52,7 +52,8 @@ with modelTrainer:
  
     if st.button('Start Forecast'):
         st.write('Forecasting...')
-        make_forecast(sel_series, df)
+        plotly_fig = make_forecast(sel_series, df)
+        st.plotly_chart(plotly_fig)
 
     else:
         st.write('Click button to forecast')
