@@ -13,7 +13,7 @@ modelTrainer = st.container()
 def make_forecast(series, df):
     """
         Makes forecast from series input
-        Input: selected from dropdown list (series)
+        Input: selected from dropdown list (series, df)
     """
     
     prophet_df = (df.filter(items=['Date', series]).rename(columns={'Date': 'ds', series: 'y'}))
@@ -33,13 +33,13 @@ def make_forecast(series, df):
 with header:
     st.title('LighhouseLabs Final Project:')
     st.title('Time Series Analysis')
-    # st.text('This is my project on time series analysis')
+    
 
 
 with dataset:
     st.header('EIA Energy Consumption')
     df = pd.read_csv('EIA_volumes.csv', parse_dates=['Date'])
-    # st.write(df.head())
+    
     
     sel_series = st.selectbox('Choose a graph to plot:', options=['Ethane', 'Propane', 'Gasoline', 'Jet Fuel'])
     
@@ -51,7 +51,7 @@ with modelTrainer:
     st.header('Series forecasting (FBProphet)')
  
     if st.button('Start Forecast'):
-        st.write('Forecasting...')
+        
         plotly_fig = make_forecast(sel_series, df)
         st.plotly_chart(plotly_fig)
 
