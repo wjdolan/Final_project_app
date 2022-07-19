@@ -9,7 +9,7 @@ header = st.container()
 dataset = st.container()
 modelTrainer = st.container()
 
-@st.cache()
+@st.cache(allow_output_mutation=True)
 def make_forecast(series, df):
     """
         Makes forecast from series input
@@ -53,6 +53,6 @@ with modelTrainer:
     if st.button('Start Forecast'):
         st.write('Forecasting...')
         make_forecast(sel_series, df)
-        
+
     else:
         st.write('Click button to forecast')
