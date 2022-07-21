@@ -21,9 +21,8 @@ def make_forecast(series, df):
     title = series + ' demand (thousand bbls_d)'
     
     model = Prophet()
-    model.add_seasonality(name='monthly', period=30.5, fourier_order=5)
     model.fit(prophet_df)
-    future = model.make_future_dataframe(periods=36, include_history=True)
+    future = model.make_future_dataframe(periods=60, include_history=True)
     forecast = model.predict(future)
 
     fig = plot_plotly(model, forecast)
