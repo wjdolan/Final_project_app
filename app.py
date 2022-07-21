@@ -31,7 +31,7 @@ def make_forecast(series, df):
     return fig
 
 with header:
-    st.title('Lightouse Labs Final Project:')
+    st.title('Lighthouse Labs Final Project:')
     st.title('Time Series Analysis and Forecasting')
     
 
