@@ -37,7 +37,7 @@ with header:
 
 
 with dataset:
-    st.header('Data set: EIA Energy Consumption')
+    st.header('Data set: EIA Energy Demand')
     df = pd.read_csv('EIA_volumes.csv', parse_dates=['Date'])
     
     
@@ -48,7 +48,7 @@ with dataset:
     st.plotly_chart(figp, use_container_width=True)
 
 with modelTrainer:
-    st.header('Three Year forecast (FBProphet):')
+    st.header('Five Year forecast (FBProphet):')
  
     if st.button('Start Forecast'):
         
