@@ -55,4 +55,4 @@ with modelTrainer:
         st.plotly_chart(plotly_fig)
 
     else:
-        st.write('Click button to forecast')
+        st.write('Click to forecast')
